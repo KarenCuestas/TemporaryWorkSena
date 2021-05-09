@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+{% load static %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<html lang="en">
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link href="/static/css/bootstrap.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/logo.icon">
+    <link rel="icon" type="images/png" sizes="96x96" href="/static/images/Logotipo.png">
+    <link href="/static/css/css.css" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">-->
+    
+     <link rel="stylesheet" href="{% static 'css/css.css' %}" type="text-css">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <link href = "https://fonts.googleapis.com/css2? family = Titillium + Web: wght @ 200 & display = intercambiar "rel ="css.css">
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+
+<body>
+
+    {% csrf_token %}
+     <div class="container py-3">
+        <header class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+            <a href="#" class="">
+                    <img src="{% static '/images/Logotipo.png' %}" alt="Logotipo.png" height="60px" width="80px">
+                </a>
+
+            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+                <span class="fs-4">Temporary Work Sena</span>
+            </a>
+
+            <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+                <a class="me-3 py-2 text-dark text-decoration-none" href="login/">Entrar</a>
+                <a class="me-3 py-2 text-dark text-decoration-none" href="register/">Registrarse</a>
+            </nav>
+        </header>
+
+
+<div class="container py-5">
+    <form class="row" action="/register/" method="POST">
+        <div class="form-group col-md-3">
+             <label> Nombre</label>
+            <input type="text" placeholder="Ingresa tu nombre" name="name">
+            
+        </div>
+
+        <div class="form-group col-md-3">
+             <label> Apellido</label>
+            <input  type="text" placeholder="Apellido" name="lastName" >
+        </div>
+        <div class="form-group col-md-3">
+             <label> Telefono</label>
+
+            <input  type="text" placeholder="Numero de telefono" name="phone">
+        </div>
+        <div class="form-group col-md-3">
+             <label>Correo</label>
+            <input type="email" placeholder="Correo" name="email">
+        </div>
+
+
+        <div class="form-group col-md-3" >
+            <label>
+                Sexo
+            </label>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"  name="sex">
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+            </select>
+        </div>
+            </select>
+        <div class="form-group col-md-3" >
+            <label>
+                Numero Documento    
+            </label>
+            <input type="text" placeholder="Numero" name="numberDocument">
+        </div>
+        <div  class="form-group col-md-3">
+            <label>
+                Tipo de documento
+            </label>
+            <select  class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="typeDocument">
+                <option value="CC">Cedula</option>
+                <option value="TI">Tarjeta de identidad</option>
+            </select>
+    
+        </div>
+        <br>
+    </br>
+        <h2>Tipo de usuario</h2>
+
+        <div class="container py-5 ">
+            <div class="row">
+
+            <div class="form-group col-md-3">
+
+            
+                <label>
+                    Egresado
+                </label>
+                <input class="form-check " type="checkbox" id="graduated" name="graduated">
+            </div>
+            <div class="form-group col-md-3">
+            
+                <label >
+                    Instructor
+                </label>
+                <input  class="form-check " type="checkbox" id="instructor" name="instructor">
+            </div>
+            <div class="form-group col-md-3">
+                <label>
+                    Cliente
+                </label>
+                <input class="form-check" type="checkbox" id="client" name="client">
+            </div>
+        </div>
+
+            <div id="wrapper">
+
+            </div>
+        </div>
+        <div>
+        <input class="btn btn-primary btn-sm" type="submit" value="Registrarce">
+    </div>
+    <script>
+        const GRUDUATED = document.getElementById('graduated');
+        const INSTRUCTOR = document.getElementById('instructor');
+        const CLIENT = document.getElementById('client');
+
+        //la funcion que lee los checkbox
+
+        function client() {
+            const WRAPPER = document.getElementById('wrapper');
+            //creando inputs
+            const inputAdrres = document.createElement('input');
+            const inputCity = document.createElement('input');
+            const inputUser = document.createElement('input');
+            const password = document.createElement('input');
+            const inputClient = document.createElement('input');
+            inputClient.value = 'client';
+            //poniendo placeholder
+
+            inputAdrres.placeholder = 'Direccion';
+            inputCity.placeholder = 'Ciudad';
+            inputUser.placeholder = 'Nombre de usuario';
+            password.placeholder = 'Contraseña';
+            //colocando ids para obtener su valor
+            inputAdrres.name = 'addres';
+            inputCity.name = 'city';
+            inputUser.name = 'userClient';
+            password.name = 'passClient';
+
+            //con esto pinto los inputs
+            [inputAdrres, inputCity, inputUser, password, inputClient,].forEach(input => {
+                WRAPPER.appendChild(input);
+            });
+
+            const input = wrapper.childNodes[4];
+            input.style.display = 'none';
+        }
+
+        function instructor() {
+            const WRAPPER = document.getElementById('wrapper');
+            //creando inputs
+            const inputCity = document.createElement('input');
+            const inputUser = document.createElement('input');
+            const password = document.createElement('input');
+            const inputInstructor = document.createElement('input');
+            inputInstructor.value = 'Instructor';
+            //poniendo placeholder
+            inputCity.placeholder = 'Ciudad';
+            inputUser.placeholder = 'Nombre de usuario';
+            password.placeholder = 'Contraseña';
+            //colocando ids para obtener su valor
+            inputCity.name = 'city';
+            inputUser.name = 'userInstructor';
+            password.name = 'passInstructor';
+
+            [inputCity, inputUser, password, inputInstructor].forEach(input => {
+                WRAPPER.appendChild(input);
+            });
+            const input = wrapper.childNodes[3];
+            input.style.display = 'none';
+        }
+
+        function graduated() {
+            const WRAPPER = document.getElementById('wrapper');
+            const options = ['si', 'no'];
+            const optionsProgram = [ 'ADSI', 'TECNICO EN SISTEMAS', 'ELECTRICIDAD INDUSTRIAL', 
+        'OBRAS CIVILES', 'ENTRENAMIENTO DEPORTIVO', 'CONSTRUCCIÓN', 'MANTENIMIENTO DE EQUIPOS DE COMPUTO',
+        'DISEÑO E INSTALACION DE CABLEADO ESTRUCTURADO', 'SOLDADURA DE PRODUCTOS METÁLICOS INSTALACIONES ELECTRICAS RESIDENCIALES',
+        'PATRONAJE INDUSTRIAL DE PRENDAS DE VESTIR', 'CONSTRUCCIONES LIVIANAS EN SECO JOYERIA ARMADA',
+        'MANTENIMIENTO DE MOTOCICLETAS Y MOTOCARROS', 'CONFECCION INDUSTRIAL DE ROPA EXTERIOR'];
+            const divContentExp = document.createElement('div');
+            const divContentProgramName = document.createElement('div');
+            const labelExperencie =  document.createElement('label');
+            const labelProgramName =  document.createElement('label');
+            //text labels
+            labelExperencie.textContent = 'Experiencia: ' 
+            //creando inputs
+            const inputAdrres = document.createElement('input');
+            const inputAcademicTraining = document.createElement('input');
+            const inputCity = document.createElement('input');
+            const inputGraduated = document.createElement('input');
+            const inputPosition = document.createElement('input');
+            const addresEnterprise = document.createElement('input');
+            const timeInEnterprise = document.createElement('input');
+            const userGruadatued = document.createElement('input');
+            const password = document.createElement('input');
+            const idInstructor = document.createElement('input');
+            const nameEnterprise = document.createElement('input');
+            const selectListExperencie = document.createElement("select");
+            const selectListNameProgram = document.createElement("select");
+
+
+            inputGraduated.value = 'graduated';
+            inputGraduated.id = 'graduatedHidden';
+            //poniendo placeholder
+            inputAdrres.placeholder = 'Direccion';
+            inputCity.placeholder = 'Ciudad';
+            userGruadatued.placeholder = 'Nombre de usuario';
+            inputPosition.placeholder = 'Puesto'; 
+            addresEnterprise.placeholder = 'Direccion Empresa';
+            nameEnterprise.placeholder = 'Nombre de la Empresa';
+            timeInEnterprise.placeholder = 'Tiempo en la empresa';
+            userGruadatued.placeholder = 'Nombre de Usuario';
+            password.placeholder = 'Contraseña';
+            idInstructor.placeholder = 'Id Instructor';
+            inputAcademicTraining.placeholder = 'Formación academica';
+            //colocando ids para obtener su valor
+            inputAdrres.name = 'addres';
+            inputCity.name = 'city';
+            inputPosition.name = 'position'; 
+            addresEnterprise.name = 'addresEnterprise';
+            timeInEnterprise.name = 'timeEnterprise';
+            userGruadatued.name = 'userGraduated';
+            password.name = 'passwordGraduated';
+            nameEnterprise.name = 'nameEnterprise'
+            idInstructor.name = 'idInstructor';
+            selectListNameProgram.name = 'nameProgram';
+            selectListExperencie.name = 'experiencie';
+            inputAcademicTraining.name = 'academicTraining';
+
+            //tipos de input
+            idInstructor.type = 'number';
+
+            //Creando y agregando options
+            for (let i = 0; i < options.length; i++) {
+                let option = document.createElement("option");
+                option.value = options[i];
+                option.textContent = options[i];
+                selectListExperencie.appendChild(option);
+            }
+
+            for (let i = 0; i < optionsProgram.length; i++) {
+                let option = document.createElement("option");
+                option.value = optionsProgram[i];
+                option.textContent = optionsProgram[i];
+                selectListNameProgram.appendChild(option);
+            }
+            
+            divContentExp.appendChild(labelExperencie);
+            divContentExp.appendChild(selectListExperencie);
+            divContentProgramName.appendChild(labelProgramName);
+            divContentProgramName.appendChild(selectListNameProgram);
+
+            [inputAdrres, inputCity,nameEnterprise, addresEnterprise, idInstructor,
+            timeInEnterprise, inputPosition, userGruadatued, password, inputAcademicTraining,
+            divContentProgramName, divContentExp, inputGraduated].forEach(input => {
+                WRAPPER.appendChild(input);
+                console.log(WRAPPER);
+            });
+            const input = wrapper.childNodes[13];
+            input.style.display = 'none';
+
+        }
+        //cuando yo le click en cliente me aparesca sus campos 
+
+        CLIENT.addEventListener('click', e => {
+            if (CLIENT.checked) {
+                client();
+                //si es verdadero se habre si no 
+            }else {
+                const WRAPPER = document.getElementById('wrapper');
+                WRAPPER.innerHTML = '';
+
+            }
+       });
+
+        INSTRUCTOR.addEventListener('click', e => {
+            if (INSTRUCTOR.checked) {
+                instructor();
+            }else {
+                const WRAPPER = document.getElementById('wrapper');
+                WRAPPER.innerHTML = '';
+
+            }
+       });
+
+        GRUDUATED.addEventListener('click', e => {
+            if (GRUDUATED.checked) {
+                graduated();
+            }else {
+                const WRAPPER = document.getElementById('wrapper');
+                WRAPPER.innerHTML = '';
+
+            }
+       });
+
+    </script>
+     </form>
+    </div>
+</body>
+</html>
